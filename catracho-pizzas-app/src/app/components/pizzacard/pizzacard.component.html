@@ -1,0 +1,31 @@
+<ion-card class="cardpizza">
+  <img style="margin-top: 4%;" src="https://www.pizzahutonline.hn/Imagenes/CATEGORIAS/PIZZAS/PH0030.jpg"/>
+  <ion-card-header>
+    <ion-card-title style="color: #c63137;">Big new yorker Bacon & Banana peppers</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <p style="color: black;">Es una pizza de gran tamaño, inspirada al estilo New York con rebanadas grandes, de pepperoni y trocitos de bacon, con abundante rebanadas de chile banana peppers de sabor suave con toque ácido, con una mezcla de orégano y queso parmesano sobre los ingredientes y mantequilla de ajo a la orilla.</p>
+    
+    
+  </ion-card-content>
+  
+</ion-card>
+
+<ion-card class="cardpizza ">
+  <ion-card-content class="button-row" >
+    <p style="color: black;">DESDE</p>
+    <p style="color: #c63137;">LPS. 329.00</p>
+  </ion-card-content>
+  <ion-card-content class="button-row">
+    <ion-button (click)="restarpizzas()" fill="clear" >
+      <ion-icon name="remove-circle" size="large" color="medium"></ion-icon>
+    </ion-button>
+    <p style="color: black;">{{cantidadpizzas}}</p>
+    <ion-button (click)="sumarpizzas()" fill="clear" >
+      <ion-icon name="add-circle" size="large" color="medium"></ion-icon>
+      
+    </ion-button>
+
+  </ion-card-content>
+  <ion-button class="boton-ordenar">ORDENAR</ion-button>
+</ion-card>

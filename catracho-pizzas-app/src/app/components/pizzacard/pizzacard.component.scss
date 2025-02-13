@@ -1,0 +1,25 @@
+.cardpizza{
+  background-color: white;
+}
+
+.botonespizza{
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  --background: #5c544c;
+  --border-radius: 10000px;
+}
+
+.button-row {
+    display: flex; /* Usar flexbox */
+    align-items: center; /* Centrar verticalmente */
+    justify-content: space-between; /* Espacio entre los elementos */
+  }
+
+.boton-ordenar{
+  --background: #70a301;
+  color: white;
+  float: right;
+  margin-right:  5%;
+}
