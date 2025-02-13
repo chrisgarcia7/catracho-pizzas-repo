@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonButton, IonIcon } from '@ionic/angular/standalone';
+import { Component, inject } from '@angular/core';
+import { IonCard, IonCardHeader, IonCardTitle, IonCardContent, IonButton, IonIcon, AlertController } from '@ionic/angular/standalone';
 import { addIcons } from 'ionicons';
-import { addOutline } from 'ionicons/icons';
+import { addOutline, text } from 'ionicons/icons';
 import { removeCircle } from 'ionicons/icons';
 import { addCircle } from 'ionicons/icons';
 
@@ -34,6 +34,33 @@ export class PizzacardComponent {
     }else{
       this.cantidadpizzas=this.cantidadpizzas-1
     }
+  }
+
+  private readonly alertController= inject( AlertController);
+
+  alertButtons = [
+    {
+      text: 'Cancelar',
+      role: 'cancel',
+      cssClass: 'secundary',
+      handler: () => {
+        console.log('Cancel');
+      }
+    },
+    {
+      text: 'Ok',
+      handler: () => {
+        alert('Pizza Ordenada')
+      }
+    }
+  ]
+  async ordenarpizza(): Promise<void>{
+    const ordenarpizzaAlert = await this.alertController.create({
+      header: 'Ordenar Pizza',
+      subHeader: '¿Estas seguro que deseas ordenar una pizza?',
+      buttons: this.alertButtons,
+    });
+    await ordenarpizzaAlert.present();
   }
 
 }
