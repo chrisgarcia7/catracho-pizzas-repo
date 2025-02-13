@@ -38,27 +38,11 @@ export class PizzacardComponent {
 
   private readonly alertController= inject( AlertController);
 
-  alertButtons = [
-    {
-      text: 'Cancelar',
-      role: 'cancel',
-      cssClass: 'secundary',
-      handler: () => {
-        console.log('Cancel');
-      }
-    },
-    {
-      text: 'Ok',
-      handler: () => {
-        alert('Pizza Ordenada')
-      }
-    }
-  ]
+  
   async ordenarpizza(): Promise<void>{
     const ordenarpizzaAlert = await this.alertController.create({
       header: 'Ordenar Pizza',
-      subHeader: '¿Estas seguro que deseas ordenar una pizza?',
-      buttons: this.alertButtons,
+      subHeader: 'Ha agregado correctamente el producto a su carrito',
     });
     await ordenarpizzaAlert.present();
   }
